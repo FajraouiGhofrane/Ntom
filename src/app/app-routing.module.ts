@@ -8,6 +8,9 @@ import { ListReclamationComponent } from './list-reclamation/list-reclamation.co
 import { AjouterReservtionComponent } from './reservation/ajouter-reservation/ajouter-reservtion/ajouter-reservtion.component';
 import { AfficherReservtionComponent } from './reservation/afficher-reservation/afficher-reservtion/afficher-reservtion.component';
 import { ModifReservationComponent } from './reservation/modif-reservation/modif-reservation.component';
+import { NutritionListComponent } from './components/nutrition-list/nutrition-list.component';
+import { NutritionAddComponent } from './components/nutrition-add/nutrition-add.component';
+import { NutritionEditComponent } from './nutrition-edit/nutrition-edit.component';
 const routes: Routes = [
   { path: 'create-programme', component: CreateProgrammeComponent },
   { path: 'list-programme', component: ListProgrammeComponent }, // Route for the list of programmes
@@ -17,7 +20,9 @@ const routes: Routes = [
   { path: 'ajout-reservation', component: AjouterReservtionComponent },
   { path: 'list-reservation', component: AfficherReservtionComponent },
   { path: 'modifier/:id_reservation', component: ModifReservationComponent },
-
+  { path: 'nutritions', component: NutritionListComponent },
+  { path: 'edit/:id', component: NutritionEditComponent },
+  { path: 'addnutrition', component: NutritionAddComponent },
 ];
 
 @NgModule({
