@@ -1,0 +1,100 @@
+/* Carte avec bordure bleu et ombre douce */
+.custom-card {
+    border: 1px solid #007bff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Titre de la carte avec une couleur bleue */
+  .card-title {
+    color: #007bff;
+    font-weight: 600;
+    font-size: 24px;
+  }
+  
+  /* Espacement de chaque champ de formulaire */
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Style des labels */
+  .form-label {
+    font-weight: 600;
+    color: #333;
+  }
+  
+  /* Champs de texte avec bordure douce */
+  .form-control {
+    border-radius: 8px;
+    border: 1px solid #007bff;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  /* Effet de focus sur les champs de texte */
+  .form-control:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 10px rgba(0, 87, 179, 0.3);
+  }
+  
+  /* Texte d'erreur en rouge */
+  .text-danger {
+    font-size: 14px;
+    color: #e74c3c;
+  }
+  
+  /* Boutons avec fond bleu et effets de hover */
+  .custom-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .custom-btn:hover {
+    background-color: #0056b3;
+    cursor: pointer;
+  }
+  
+  /* Bouton Annuler avec contour et texte bleu */
+  .custom-outline-btn {
+    background-color: white;
+    color: #007bff;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .custom-outline-btn:hover {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+  .custom-btn {
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .custom-outline-btn {
+    border: 2px solid #007bff;
+    color: #007bff;
+    border-radius: 5px;
+  }
+  
+  .custom-btn:hover, .custom-outline-btn:hover {
+    background-color: #0056b3;
+    color: white;
+  }
+  
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,31 @@
+<!-- src/app/components/list-reclamation/list-reclamation.component.html -->
+<div class="reclamation-list">
+    <h2>Reclamations List</h2>
+    <table *ngIf="reclamations.length > 0; else noReclamations">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th>Actions</th> <!-- New column for Actions -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reclamation of reclamations">
+          <td>{{ reclamation.title }}</td>
+          <td>{{ reclamation.description }}</td>
+          <td>{{ reclamation.status }}</td>
+          <td>
+            
+            <button (click)="onDelete(reclamation.id)" class="btn btn-danger">Delete</button>
+        
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <ng-template #noReclamations>
+      <p>No reclamations found.</p>
+    </ng-template>
+  </div>
+  

@@ -1,0 +1,73 @@
+<!-- Header or Navbar -->
+<nav>
+  <ul>
+    <li><a routerLink="/create-programme" routerLinkActive="active">Create Programme</a></li>
+    <li><a routerLink="/list-programme" routerLinkActive="active">List Programme</a></li>
+    <li><a routerLink="/list-reclamations">View Reclamations</a></li>
+    <li><a routerLink="/ajout-reservation">Reservation</a></li>
+    <li><a routerLink="/nutritions">List Nutriments</a></li>
+  </ul>
+
+  <style>
+    /* Basic styling for the navigation */
+    nav {
+      background-color: #333;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    li {
+      margin: 0 15px;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Hover effect for links */
+    a:hover {
+      background-color: #555;
+    }
+
+    /* Active link styling */
+    a.router-link-active {
+      background-color: #007bff;
+      color: white;
+    }
+
+    /* Additional responsive styling */
+    @media (max-width: 600px) {
+      nav {
+        padding: 5px;
+      }
+
+      ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      li {
+        margin: 10px 0;
+      }
+    }
+  </style>
+</nav>
+
+
+<!-- Main content area where routed components will be displayed -->
+<div class="main-content">
+  <router-outlet></router-outlet>
+</div>

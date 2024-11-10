@@ -1,0 +1,26 @@
+.reclamation-form {
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  .reclamation-form h2 {
+    text-align: center;
+  }
+  
+  .reclamation-form div {
+    margin-bottom: 15px;
+  }
+  
+  .reclamation-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .reclamation-form input,
+  .reclamation-form textarea,
+  .reclamation-form select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  

@@ -1,0 +1,21 @@
+<div class="container">
+  <div *ngIf="reservations.length > 0; else noReservations" class="row">
+    <div *ngFor="let reservation of reservations" class="col-md-4">
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5 class="card-title">{{ reservation.nomCours }}</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>Coach :</strong> {{ reservation.nomCoach }}</p>
+          <p><strong>Date :</strong> {{ reservation.date | date: 'shortDate' }}</p>
+          <button class="btn btn-primary" (click)="updateReservation(reservation.id_reservation)">Modifier</button>
+          <button class="btn btn-danger" (click)="removeReservation(reservation.id_reservation)">Supprimer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noReservations>
+    <p>Aucune réservation disponible.</p>
+  </ng-template>
+</div>

@@ -1,0 +1,41 @@
+<div class="container">
+    <h2>Programme List</h2>
+  
+    <!-- Error message if there is an issue fetching the programmes -->
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+  
+    <table class="table table-striped" *ngIf="programmes.length > 0">
+      <thead>
+        <tr>
+          
+          <th>Title</th>
+          <th>Description</th>
+          <th>ProgrammeType</th>
+          <th>ExerciseType</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let programme of programmes; let i = index">
+          <td>{{ programme.titre }}</td>
+          <td>{{ programme.description }}</td>
+          <td>{{ programme.type }}</td>
+          <td>{{ programme.exerciseType }}</td>
+          <td>
+            <!-- Update button, passing the programme id -->
+            <button (click)="onUpdate(programme.idProgramme)" class="btn btn-primary">Update</button>
+
+            <button (click)="onDelete(programme.idProgramme)" class="btn btn-danger">Delete</button>
+        </td>
+
+        </tr>
+      </tbody>
+    </table>
+  
+    <div *ngIf="programmes.length === 0" class="alert alert-info">
+      No programmes available.
+    </div>
+  </div>
+  

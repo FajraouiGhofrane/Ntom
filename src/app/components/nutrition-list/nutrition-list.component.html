@@ -1,0 +1,83 @@
+<!-- Ajouter Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<div class="container mt-5">
+  <h2 class="text-center">Liste des Nutriments</h2>
+
+  <div class="text-right mb-3">
+    <button class="btn btn-primary" (click)="addNutrition()">Ajouter Nutrition</button>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Description</th>
+        <th>Type de Repas</th>
+        <th>Quantité</th>
+        <th>Calories</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let nutrition of nutritions"
+          (click)="loadNutritionDetails(nutrition.id!)" 
+          [class.table-active]="selectedNutrition && selectedNutrition.id === nutrition.id">
+        <td>{{ nutrition.id }}</td>
+        <td>{{ nutrition.name }}</td>
+        <td>{{ nutrition.description }}</td>
+        <td>{{ nutrition.mealType }}</td>
+        <td>{{ nutrition.quantity }}</td>
+        <td>{{ nutrition.calories }}</td>
+        <td>
+          <!-- Bouton Modifier avec icône -->
+          <button class="btn btn-warning btn-sm" 
+                  (click)="editNutrition(nutrition.id)">
+            <i class="fas fa-edit" style="color: #304DA1;"></i> <!-- Icône Modifier -->
+          </button>    
+          
+          <!-- Bouton Supprimer avec icône -->
+          <button class="btn btn-danger btn-sm" 
+                  (click)="deleteNutrition(nutrition.id!); $event.stopPropagation()">
+            <i class="fas fa-trash-alt" style="color: #304DA1;"></i> <!-- Icône Supprimer -->
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="selectedNutrition" class="mt-4">
+    <h4 class="text-center mb-4">Détails de la Nutrition Sélectionnée</h4>
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <h5><strong>Nom:</strong></h5>
+            <p>{{ selectedNutrition.name }}</p>
+          </div>
+          <div class="col-md-6">
+            <h5><strong>Type de Repas:</strong></h5>
+            <p>{{ selectedNutrition.mealType }}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <h5><strong>Quantité:</strong></h5>
+            <p>{{ selectedNutrition.quantity }}</p>
+          </div>
+          <div class="col-md-6">
+            <h5><strong>Calories:</strong></h5>
+            <p>{{ selectedNutrition.calories }}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <h5><strong>Description:</strong></h5>
+            <p>{{ selectedNutrition.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

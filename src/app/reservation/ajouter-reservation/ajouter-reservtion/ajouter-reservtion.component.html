@@ -1,0 +1,44 @@
+<div class="card custom-card">
+  <div class="card-body">
+    <h3 class="card-title text-center mb-4">Ajouter une Réservation</h3>
+    <form [formGroup]="validateForm" (ngSubmit)="addReservation()">
+      <div class="form-group mb-4">
+        <label for="nomCours" class="form-label">Nom du cours</label>
+        <input id="nomCours" formControlName="nomCours" type="text" class="form-control" placeholder="Entrez le nom du cours" />
+        <div *ngIf="validateForm.get('nomCours')?.invalid && validateForm.get('nomCours')?.touched" class="text-danger mt-1">
+          Le nom du cours est requis.
+        </div>
+      </div>
+
+      <div class="form-group mb-4">
+        <label for="nomCoach" class="form-label">Nom du coach</label>
+        <input id="nomCoach" formControlName="nomCoach" type="text" class="form-control" placeholder="Entrez le nom du coach" />
+        <div *ngIf="validateForm.get('nomCoach')?.invalid && validateForm.get('nomCoach')?.touched" class="text-danger mt-1">
+          Le nom du coach est requis.
+        </div>
+      </div>
+
+      <div class="form-group mb-4">
+        <label for="date" class="form-label">Date</label>
+        <input id="date" formControlName="date" type="date" class="form-control" />
+        <div *ngIf="validateForm.get('date')?.invalid && validateForm.get('date')?.touched" class="text-danger mt-1">
+          La date est requise.
+        </div>
+      </div>
+
+      <div class="form-group mb-4">
+        <label for="time" class="form-label">Heure</label>
+        <input id="time" formControlName="time" type="time" class="form-control" />
+        <div *ngIf="validateForm.get('time')?.invalid && validateForm.get('time')?.touched" class="text-danger mt-1">
+          L'heure est requise.
+        </div>
+      </div>
+
+      <!-- Boutons d'action: Ajouter et Annuler -->
+      <div class="d-flex justify-content-between">
+        <button type="submit" class="btn custom-btn" [disabled]="validateForm.invalid">Ajouter</button>
+        <button type="button" class="btn custom-outline-btn" (click)="onCancel()">Annuler</button>
+      </div>
+    </form>
+  </div>
+</div>

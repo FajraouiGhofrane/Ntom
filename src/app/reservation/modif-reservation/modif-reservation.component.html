@@ -1,0 +1,19 @@
+<form *ngIf="validateForm" [formGroup]="validateForm" (ngSubmit)="saveReservation()">
+    <div>
+      <label for="nomCours">Nom du Cours</label>
+      <input id="nomCours" formControlName="nomCours" type="text">
+    </div>
+  
+    <div>
+      <label for="nomCoach">Nom du Coach</label>
+      <input id="nomCoach" formControlName="nomCoach" type="text">
+    </div>
+  
+    <div>
+      <label for="date_reservation">Date de Réservation</label>
+      <input id="date_reservation" formControlName="date_reservation" type="date">
+    </div>
+  
+    <button type="submit" [disabled]="!validateForm.valid">Enregistrer</button>
+  </form>
+  

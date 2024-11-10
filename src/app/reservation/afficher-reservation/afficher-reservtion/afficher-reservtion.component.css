@@ -1,0 +1,39 @@
+/* fichier afficher-reservtion.component.css */
+.card {
+    border-radius: 15px;  /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Ombre autour de la carte */
+    padding: 20px;  /* Espacement interne */
+  }
+  
+  .card-header {
+    background-color: #f8f9fa;  /* Couleur de fond pour l'en-tête */
+    border-bottom: 1px solid #e0e0e0;  /* Bordure douce pour séparer l'en-tête du corps */
+    text-align: center;  /* Centrer le titre */
+  }
+  
+  .card-body {
+    padding: 15px;  /* Espacement interne du corps de la carte */
+  }
+  
+  .card-footer {
+    text-align: center;  /* Centrer les boutons en bas de la carte */
+    padding: 10px;  /* Espacement interne du bas */
+  }
+  
+  .card-title {
+    font-weight: bold;  /* Mettre en gras le titre du cours */
+  }
+  
+  .container {
+    padding-top: 30px;  /* Espacement en haut de la page */
+  }
+  
+  .custom-card {
+    margin: 0 auto;  /* Centrer la carte */
+    max-width: 600px;  /* Limiter la largeur maximale de la carte */
+  }
+  
+  .form-group {
+    margin-bottom: 20px;  /* Espacement entre les champs du formulaire */
+  }
+  

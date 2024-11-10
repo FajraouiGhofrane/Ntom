@@ -1,0 +1,34 @@
+<div class="container">
+    <h2>Create New Programme</h2>
+    <form [formGroup]="programmeForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="titre">Title</label>
+        <input id="titre" formControlName="titre" class="form-control" placeholder="Enter programme title" />
+        <div *ngIf="programmeForm.get('titre')?.invalid && programmeForm.get('titre')?.touched" class="text-danger">
+          Title is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" formControlName="description" class="form-control" placeholder="Enter description"></textarea>
+      </div>
+  
+      <div class="form-group">
+        <label for="type">Programme Type</label>
+        <select id="type" formControlName="type" class="form-control">
+          <option *ngFor="let type of programmeTypes" [value]="type">{{ type }}</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label for="exerciseType">Exercise Type</label>
+        <select id="exerciseType" formControlName="exerciseType" class="form-control">
+          <option *ngFor="let type of exerciseTypes" [value]="type">{{ type }}</option>
+        </select>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="programmeForm.invalid">Add Programme</button>
+    </form>
+  </div>
+  
